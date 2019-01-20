@@ -49,12 +49,14 @@ list_delete_at_end (list_node_t **head) {
 
 	list_node_t *temp = NULL;
 	list_node_t *prev = NULL;
-	
-	temp = *head;
 
+	if (*head == NULL)
+		return;
+		
+	temp = *head;
 	if (temp->next == NULL) {
-		temp->next = NULL;
 		free(temp);
+		*head = NULL;
 		return;
 	}
 

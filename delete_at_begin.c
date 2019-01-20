@@ -73,32 +73,37 @@ main () {
 
 	list_add_at_begin(&(head),4);
 	list_add_at_begin(&(head),3);
-/*
 	list_add_at_begin(&(head),2);
 	list_add_at_begin(&(head),1);
 	list_add_at_begin(&(head),0);
-*/
+
 	printf("The created list is: ");
 	print_list(head);
 	printf("\n");
 
 	printf("Deleting nodes from beginning: \n");
-/*
-	printf("Deleting 0: ");
+
+	printf("List before deleting: ");
+	print_list(head);
 	list_delete_at_begin(&(head));
+	printf("list after deleting from beginning:");
 	print_list(head);
 	printf("\n");
 
-	printf("Deleting 1: ");
+	printf("List before deleting: ");
+	print_list(head);
 	list_delete_at_begin(&(head));
+	printf("list after deleting from beginning:");
 	print_list(head);
 	printf("\n");
 
-	printf("Deleting 2: ");
+	printf("List before deleting: ");
+	print_list(head);
 	list_delete_at_begin(&(head));
+	printf("list after deleting from beginning:");
 	print_list(head);
 	printf("\n");
-*/
+
 	printf("List before deleting: ");
 	print_list(head);
 	list_delete_at_begin(&(head));
