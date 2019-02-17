@@ -49,16 +49,17 @@ loop_detection (list_node_t **head) {
 
 	temp = *head;
 	temp1 = *head;
-	while(temp != NULL) {
-		temp = temp->next;
-		temp1 = temp1->next->next;
+	temp1 = temp1->next->next;
+	while(temp && temp1 && temp1->next) {
 		if (temp == temp1) {
 			printf("Loop detected in the list\n");
 			return;
-		} else if (temp->next == NULL) {
-			printf("There is o loop in the list\n");
+		} else if (temp1->next->next == NULL) {
+			printf("There is no loop in the list\n");
 			return;
 		}
+	temp = temp->next;
+	temp1 = temp1->next->next;
 	}
 
 }
@@ -94,7 +95,11 @@ main () {
         print_list(head);
         printf("\n");
 
-	printf("Detecting whether or not there is a loop in the list:");
+	printf("Detecting whether or not there is a loop in the list :");
+	loop_detection(&head);
+
+	printf("Creating a loop in the list\n");
+	head->next->next->next->next->next->next = head;
 	loop_detection(&head);
 
         return 0;
