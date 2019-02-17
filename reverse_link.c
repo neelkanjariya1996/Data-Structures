@@ -45,17 +45,17 @@ void
 reverse_list (list_node_t **head) {
 
 	list_node_t *curr = NULL;
-	list_node_t *temp1 = NULL;
-	list_node_t *temp2 = NULL;
+	list_node_t *prev = NULL;
+	list_node_t *next = NULL;
 
 	curr = *head;
 	while (curr != NULL) {
-		temp1 = curr->next;
-		temp2 = temp1->next;
-		curr->next = NULL;
-
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
 	}
-
+	*head = prev;
 }
 
 void

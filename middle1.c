@@ -75,7 +75,7 @@ main () {
         int len = 0;
 
         list_add_at_begin(&(head),9);
-//        list_add_at_begin(&(head),8);
+        list_add_at_begin(&(head),8);
         list_add_at_begin(&(head),7);
         list_add_at_begin(&(head),6);
         list_add_at_begin(&(head),5);
